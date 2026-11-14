@@ -1,0 +1,20 @@
+[Unit]
+Description=BITMesh SOM agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=bitmesh
+EnvironmentFile=/etc/bitmesh/agent.env
+ExecStart=/opt/bitmesh/.venv/bin/bitmesh agent --inventory /etc/bitmesh/inventory.yaml --som-id ${BITMESH_SOM_ID}
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+# Adapt device access only after reviewing the actual Kria provider requirements.
+
+[Install]
+WantedBy=multi-user.target

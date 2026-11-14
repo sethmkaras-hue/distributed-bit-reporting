@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: bitmesh
+      POSTGRES_DB: bitmesh
+      POSTGRES_PASSWORD: ${BITMESH_POSTGRES_PASSWORD:?Supply a PostgreSQL password securely}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - archive:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bitmesh -d bitmesh"]
+      interval: 5s
+      retries: 10
+volumes:
+  archive:

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package bitmesh.v1;
+// Envelope payloads are validated by the shared Pydantic schema before use.
+// Separate streams prevent historical replay from blocking live measurements.
+message Envelope { uint32 schema_version = 1; bytes json = 2; }
+service Agent {
+  rpc Peer(Envelope) returns (Envelope);
+  rpc Identity(Envelope) returns (Envelope);
+  rpc Snapshot(Envelope) returns (Envelope);
+  rpc Live(Envelope) returns (stream Envelope);
+  rpc Events(Envelope) returns (stream Envelope);
+  rpc Replay(Envelope) returns (Envelope);
+  rpc Acknowledge(Envelope) returns (Envelope);
+  rpc Command(Envelope) returns (Envelope);
+  rpc Configure(Envelope) returns (Envelope);
+}

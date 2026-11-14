@@ -1,0 +1,14 @@
+{
+  "page_errors": [],
+  "fast_change_to_dom_ms": 845.3616199985845,
+  "websocket_connections": 2,
+  "reconnected": true,
+  "mobile_horizontal_overflow": false,
+  "verified": [
+    "overview",
+    "SOM drilldown",
+    "fault injection and archive display",
+    "offline/reconnect",
+    "mobile viewport"
+  ]
+}

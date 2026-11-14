@@ -1,0 +1,15 @@
+{
+  "host": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "subsystems": 25,
+  "soms": 400,
+  "parameters_per_som": 100,
+  "duration_requested_s": 15.0,
+  "transport": "real loopback gRPC; isolated subsystem processes",
+  "database": "SQLite WAL FULL",
+  "buffer_budget_mb_per_som": 64,
+  "heartbeat_and_forwarding_tick_s": 0.5,
+  "started_at": 1794614142.5398228,
+  "sampling_profile": "PS temperature 200 ms; other categories 10 s",
+  "error": "TimeoutError: S22 worker startup timed out",
+  "elapsed_s": 60.01972798299994
+}

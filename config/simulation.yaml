@@ -1,0 +1,199 @@
+nodes:
+- id: s01-n01
+  subsystem: S01
+  ip: 10.40.1.11
+  endpoint: 127.0.0.1:51000
+- id: s01-n02
+  subsystem: S01
+  ip: 10.40.1.12
+  endpoint: 127.0.0.1:51001
+- id: s01-n03
+  subsystem: S01
+  ip: 10.40.1.13
+  endpoint: 127.0.0.1:51002
+- id: s01-n04
+  subsystem: S01
+  ip: 10.40.1.14
+  endpoint: 127.0.0.1:51003
+- id: s02-n01
+  subsystem: S02
+  ip: 10.40.2.11
+  endpoint: 127.0.0.1:51004
+- id: s02-n02
+  subsystem: S02
+  ip: 10.40.2.12
+  endpoint: 127.0.0.1:51005
+- id: s02-n03
+  subsystem: S02
+  ip: 10.40.2.13
+  endpoint: 127.0.0.1:51006
+- id: s02-n04
+  subsystem: S02
+  ip: 10.40.2.14
+  endpoint: 127.0.0.1:51007
+- id: s03-n01
+  subsystem: S03
+  ip: 10.40.3.11
+  endpoint: 127.0.0.1:51008
+- id: s03-n02
+  subsystem: S03
+  ip: 10.40.3.12
+  endpoint: 127.0.0.1:51009
+- id: s03-n03
+  subsystem: S03
+  ip: 10.40.3.13
+  endpoint: 127.0.0.1:51010
+- id: s03-n04
+  subsystem: S03
+  ip: 10.40.3.14
+  endpoint: 127.0.0.1:51011
+memory_mb: 16
+lease_s: 3.0
+tick_s: 0.2
+peer_heartbeat_s: 1.0
+rpc_timeout_s: 0.25
+parameters:
+- id: ps.temperature
+  name: PS temperature
+  description: ''
+  category: PS
+  data_type: float
+  unit: °C
+  collection_s: 0.2
+  publication_s: 0.2
+  retention_s: 86400
+  deadband: 0.1
+  warning: 75.0
+  critical: 85.0
+- id: pl.temperature
+  name: PL temperature
+  description: ''
+  category: PL
+  data_type: float
+  unit: °C
+  collection_s: 0.2
+  publication_s: 0.2
+  retention_s: 86400
+  deadband: 0.1
+  warning: 75.0
+  critical: 85.0
+- id: cpu.utilization
+  name: CPU utilization
+  description: ''
+  category: Resources
+  data_type: float
+  unit: '%'
+  collection_s: 0.2
+  publication_s: 0.2
+  retention_s: 86400
+  deadband: 0.0
+  warning: 85.0
+  critical: 95.0
+- id: memory.utilization
+  name: Memory utilization
+  description: ''
+  category: Resources
+  data_type: float
+  unit: '%'
+  collection_s: 0.2
+  publication_s: 0.2
+  retention_s: 86400
+  deadband: 0.0
+  warning: null
+  critical: null
+- id: ethernet.errors
+  name: Interface errors
+  description: ''
+  category: Interface
+  data_type: integer
+  unit: ''
+  collection_s: 0.2
+  publication_s: 0.2
+  retention_s: 86400
+  deadband: 0.0
+  warning: 1.0
+  critical: 10.0
+- id: application.healthy
+  name: Processing health
+  description: ''
+  category: Application
+  data_type: boolean
+  unit: ''
+  collection_s: 0.2
+  publication_s: 0.2
+  retention_s: 86400
+  deadband: 0.0
+  warning: null
+  critical: null
+- id: software.version
+  name: Software version
+  description: ''
+  category: Versions
+  data_type: string
+  unit: ''
+  collection_s: 5.0
+  publication_s: 5.0
+  retention_s: 86400
+  deadband: 0.0
+  warning: null
+  critical: null
+- id: pl.version
+  name: PL version
+  description: ''
+  category: Versions
+  data_type: string
+  unit: ''
+  collection_s: 5.0
+  publication_s: 5.0
+  retention_s: 86400
+  deadband: 0.0
+  warning: null
+  critical: null
+- id: synthetic.0
+  name: Synthetic diagnostic 0
+  description: ''
+  category: Diagnostics
+  data_type: float
+  unit: units
+  collection_s: 1.0
+  publication_s: 1.0
+  retention_s: 86400
+  deadband: 0.0
+  warning: null
+  critical: null
+- id: synthetic.1
+  name: Synthetic diagnostic 1
+  description: ''
+  category: Diagnostics
+  data_type: float
+  unit: units
+  collection_s: 1.0
+  publication_s: 1.0
+  retention_s: 86400
+  deadband: 0.0
+  warning: null
+  critical: null
+- id: synthetic.2
+  name: Synthetic diagnostic 2
+  description: ''
+  category: Diagnostics
+  data_type: float
+  unit: units
+  collection_s: 1.0
+  publication_s: 1.0
+  retention_s: 86400
+  deadband: 0.0
+  warning: null
+  critical: null
+- id: synthetic.3
+  name: Synthetic diagnostic 3
+  description: ''
+  category: Diagnostics
+  data_type: float
+  unit: units
+  collection_s: 1.0
+  publication_s: 1.0
+  retention_s: 86400
+  deadband: 0.0
+  warning: null
+  critical: null

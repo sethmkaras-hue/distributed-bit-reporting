@@ -1,0 +1,19 @@
+name: Validate
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: uv sync --frozen --extra dev
+      - run: uv run --frozen ruff check bitmesh tests tools --exclude 'mesh_pb2*.py'
+      - run: uv run --frozen pytest -q
+      - run: npm --prefix web ci
+      - run: npm --prefix web test
+      - run: npm --prefix web run build

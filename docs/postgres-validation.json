@@ -1,0 +1,9 @@
+{
+  "database": "PostgreSQL 17",
+  "persistent_boot_identity": true,
+  "maximum_identity_measurement_key": true,
+  "committed_receipt": true,
+  "deduplication": true,
+  "new_engine_reopen": true,
+  "disposable_container_removed": true
+}

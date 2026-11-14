@@ -1,0 +1,12 @@
+{
+  "subsystems": 25,
+  "soms": 400,
+  "parameters_per_som": 100,
+  "sampling_profile": "PS temperature 200 ms; other categories 10 s",
+  "heartbeat_and_forwarding_tick_s": 0.5,
+  "transport": "real loopback gRPC; isolated subsystem processes",
+  "outcome": "interrupted during oversubscribed startup; no readiness or performance pass claimed",
+  "host_cpu_quota": "400000 / 100000 microseconds (4 cores)",
+  "observations": "Worker startup became progressively slower as process count grew; host CPU throttling and multi-second control delays. Interrupted to complete independent application validation.",
+  "required_follow_up": "Profile and optimize cold-start/control traffic further; rerun 400-SOM acceptance on a suitably provisioned host. Do not infer that more CPU alone guarantees a pass."
+}
